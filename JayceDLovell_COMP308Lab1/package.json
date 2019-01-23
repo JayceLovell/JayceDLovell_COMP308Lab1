@@ -1,0 +1,9 @@
+{
+  "name": "jayce-dlovell_comp308-lab1",
+  "version": "0.0.0",
+  "description": "JayceDLovell_COMP308Lab1",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}
