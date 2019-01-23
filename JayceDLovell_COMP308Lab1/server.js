@@ -1,8 +1,6 @@
-'use strict';
-var http = require('http');
-var port = process.env.PORT || 1337;
-
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+process.env.NODE_ENV = process.node.NODE_ENV || 'development';
+const configureExpress = require('./config/express')
+const app = configureExpress();
+app.listen(3000);
+console.log("Server running on port 3000");
+module.exports = app;
