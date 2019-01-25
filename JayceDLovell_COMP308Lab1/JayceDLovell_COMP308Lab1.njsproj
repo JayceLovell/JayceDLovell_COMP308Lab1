@@ -29,14 +29,35 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\controllers\feedback.server.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\controllers\index.server.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\controllers\thankyou.server.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\routes\index.server.routes.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config\config.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config\env\development.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="config\express.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="server.js" />
+    <Content Include="app\views\feedback.ejs">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="app\views\index.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\ThankYou.ejs">
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />

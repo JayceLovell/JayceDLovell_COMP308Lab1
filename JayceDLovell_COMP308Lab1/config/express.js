@@ -1,5 +1,5 @@
 ﻿const config = require('./config');
-const expree = require('express');
+const express = require('express');
 const morgan = require('morgan');
 const compress = require('compression');
 const bodyParser = require('body-parser');
@@ -30,7 +30,11 @@ module.exports = function () {
     app.set('view engine', 'ejs');
     app.engine('html', require('ejs').renderFile);
 
-    require('../app/routes/index.server.routes.js');
+    var route = require('../app/routes/index.server.routes.js');
+
+    route(app);
+
+    //require('../app/routes/index.server.routes.js');
 
     app.use(express.static('./public'));
 
