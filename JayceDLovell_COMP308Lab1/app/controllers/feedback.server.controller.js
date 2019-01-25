@@ -1,9 +1,9 @@
 ﻿exports.render = function (request, response) {
-    var email = request.body.email;
+    var email = request.email;
     var session = request.session;
     session.email = email;
     if (session.email)
-        response.redirect('/thankyou');
+        response.redirect('/ThankYou');
     else
         response.render('feedback');
 }

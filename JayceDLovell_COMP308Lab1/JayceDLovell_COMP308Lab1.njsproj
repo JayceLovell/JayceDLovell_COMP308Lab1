@@ -38,7 +38,13 @@
     <Compile Include="app\controllers\thankyou.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\routes\feedback.server.routes.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\routes\index.server.routes.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\routes\thankyou.server.routes.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="config\config.js">
