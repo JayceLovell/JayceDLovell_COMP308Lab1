@@ -1,27 +1,68 @@
 ﻿<!DOCTYPE html>
-<html>
+
+<html lang="en" xmlns="http:www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Feedback</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
 <body>
-
-    <form id="feedbackform" method="post">
-        First name:
-        <input type="text" name="firstname" value="">
-        <br>
-        Last name:
-        <input type="text" name="lastname" value="">
-        <br>
-        Email:
-        <input type="email" name="email" value="<%= email %>">
-        <br>
-        Favorite Color:
-        <input type="color" name="color" value=#00000 />
-        <br>
-        Your comments:
-        <textarea rows="6" cols="50">
-
-</textarea>
-        <br><br>
-        <input type="submit" value="Submit">
+    <form method="post" class="form-horizontal">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="firstname" class="col-sim-2 control-label">First name:</label>
+                    <div class="col-sim-10">
+                        <input type="text" name="firstname" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastname" class="col-sim-2 control-label">Last name:</label>
+                    <div class="col-sim-10">
+                        <input type="text" name="lastname" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sim-2 control-label">Email:</label>
+                    <div class="col-sim-10">
+                        <input type="email" name="email" value="<%= email %>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="color" class="col-sim-2 control-label">Your Favorite Color</label>
+                    <div class="col-sim-10">
+                        <input type="color" name="color" value=#00000 />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="numberOfLanguages" class="col-sim-2 control-label">Number of Languages Spoken</label>
+                    <select class="form-control" name="numberOfLanguages">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comments" class="col-sim-2 control-label">Your comments:</label>
+                    <textarea rows="6" cols="50" name="comments"></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
     </form>
-
 </body>
 </html>

@@ -61,6 +61,14 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
+    <Content Include="public\css\bootstrap-theme.css" />
+    <Content Include="public\css\bootstrap-theme.css.map" />
+    <Content Include="public\css\bootstrap-theme.min.css" />
+    <Content Include="public\css\bootstrap-theme.min.css.map" />
+    <Content Include="public\css\bootstrap.css" />
+    <Content Include="public\css\bootstrap.css.map" />
+    <Content Include="public\css\bootstrap.min.css" />
+    <Content Include="public\css\bootstrap.min.css.map" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +79,8 @@
     <Folder Include="app\routes\" />
     <Folder Include="config\" />
     <Folder Include="config\env\" />
+    <Folder Include="public\" />
+    <Folder Include="public\css\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
