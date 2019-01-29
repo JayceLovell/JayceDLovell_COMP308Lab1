@@ -1,5 +1,5 @@
 ﻿exports.render = function (request, response) {
-    console.log("in feedback controller");
+    console.log("Made by Jayce Lovell 300833478");
     let email = request.body.email;
     let firstname = request.body.firstname;
     let lastname = request.body.lastname;
