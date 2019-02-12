@@ -30,11 +30,9 @@ module.exports = function () {
     app.set('view engine', 'ejs');
     app.engine('html', require('ejs').renderFile);
 
-    //var route = require('../app/routes/index.server.routes.js');
-
-    //route(app);
-
+    // Load the routing files
     require('../app/routes/index.server.routes.js')(app);
+    require('../app/routes/users.server.routes.js')(app);
 
     app.use(express.static('./public'));
 
