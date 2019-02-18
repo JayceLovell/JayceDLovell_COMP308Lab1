@@ -2,12 +2,12 @@
     var feedback = require('../controllers/feedback.server.controller.js');
     var thankyou = require('../controllers/thankyou.server.controller.js');
     // Load the 'users' controller
-    var users = require('../controllers/users.server.controller');
+    //var users = require('../controllers/users.server.controller');
 module.exports = function (app) {
     //handle a get request made to root path
     app.get('/', index.render); //go to http://localhost:1337/
     //handle a post request made to root path
-    app.post('/', users.create); 
+    //app.post('/', users.create); 
     /*app.get('/', index.render);
     app.post('/', function (request, response) {
         console.log("render feedback");
