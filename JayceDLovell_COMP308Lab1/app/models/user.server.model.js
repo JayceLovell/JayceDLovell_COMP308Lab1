@@ -30,11 +30,7 @@ const UserSchema = new Schema({
             'Password should be longer'
         ]
     },
-    numberoflanguages: {
-        type: Number,
-        minimum: 0,
-        maximum: 10
-    },
+    numberoflanguages: Number,
     favoritesubject: String,
     customer: Boolean,
     salt: {

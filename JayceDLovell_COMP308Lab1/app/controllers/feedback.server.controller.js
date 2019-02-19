@@ -1,5 +1,6 @@
 ﻿// Load the module dependencies
 const User = require('mongoose').model('User');
+const Feedback = require('mongoose').model('Feedback');
 const passport = require('passport');
 
 const getErrorMessage = function (err) {
@@ -30,13 +31,22 @@ const getErrorMessage = function (err) {
 }
 
 exports.renderFeedback = function (request, response) {
-    console.log("Made by Jayce Lovell 300833478");
-    if (!request.user) {
-        return response.redirect('/');
-    }
-    else {
-        response.render('feedback', {
-            title: 'Feedback'
-        });
-    }
-}
+    console.log("In feedback controller");
+    //if (!request.user) {
+    //    return response.redirect('/');
+    //}
+    //else {
+    response.render('feedback', {
+        title: 'Feedback'
+    });
+    //}
+};
+
+// Create a new controller method for signing out
+exports.signout = function (req, res) {
+        // Use the Passport 'logout' method to logout
+        req.logout();
+
+        // Redirect the user back to the main application page
+        res.redirect('/');
+};

@@ -52,6 +52,7 @@ exports.renderSignup = function (req, res, next) {
     console.log("in user controller signup");
     // If user is not connected render the signup page, otherwise redirect the user back to the main application page
     if (!req.user) {
+        console.log("rendering signup cause signup failed");
         // Use the 'response' object to render the signup page
         res.render('signup', {
             // Set the page title variable

@@ -1,6 +1,5 @@
 ﻿// Load the module dependencies
 const users = require('../../app/controllers/users.server.controller');
-const feedback = require('../controllers/feedback.server.controller');
 const passport = require('passport');
 
 // Define the routes module' method
@@ -9,13 +8,13 @@ module.exports = function (app) {
     // Set up the 'signup' routes 
     app.route('/signup')
         .get(users.renderSignup)
-        .post(feedback.renderFeedback);
+        .post(users.signup);
 
     // Set up the 'signin' routes 
     app.route('/signin')
         .get(users.renderSignin)
         .post(passport.authenticate('local', {
-            successRedirect: '/feedback',
+            successRedirect: '/',
             failureRedirect: '/signin',
             failureFlash: true
         }));

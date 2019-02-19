@@ -45,6 +45,9 @@
     <Compile Include="app\controllers\users.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\models\feedback.server.model.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\models\user.server.model.js">
       <SubType>Code</SubType>
     </Compile>
