@@ -4,14 +4,11 @@ const crypto = require('crypto');
 const pbkd2f = require('pbkdf2');
 const Schema = mongoose.Schema;
 
+// Define a new 'FeedbackSchema
 const FeedbackSchema = new Schema({
-    feedbackId: {
-        type: Number,
-        unique: true
+    username: {
+        type: Schema.Types.ObjectId, ref: 'User'
     },
-    username: [
-        { type: Schema.Types.ObjectId, ref: 'User' }
-    ],
     comments: String,
     created: {
         type: Date,
@@ -21,7 +18,7 @@ const FeedbackSchema = new Schema({
 });
 
 // Configure the 'UserSchema' to use getters and virtuals when transforming to JSON
-UserSchema.set('toJSON', {
+FeedbackSchema.set('toJSON', {
     getters: true,
     virtuals: true
 });

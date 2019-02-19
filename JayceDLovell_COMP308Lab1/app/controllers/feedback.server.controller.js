@@ -1,5 +1,4 @@
 ﻿// Load the module dependencies
-const User = require('mongoose').model('User');
 const Feedback = require('mongoose').model('Feedback');
 const passport = require('passport');
 
@@ -30,16 +29,38 @@ const getErrorMessage = function (err) {
     return message;
 }
 
-exports.renderFeedback = function (request, response) {
+exports.renderFeedback = function (req, res) {
     console.log("In feedback controller");
     //if (!request.user) {
     //    return response.redirect('/');
     //}
     //else {
-    response.render('feedback', {
+    res.render('feedback', {
         title: 'Feedback'
     });
     //}
+};
+// crete a new controller method that creats a new feedback
+exports.feedback = function (req, res, next) {
+    console.log("creating new feedback");
+    if (!req.feedback) {
+        // Create a new 'User' model instance
+        const feedback = new Feedback(req.body);
+        const message = null;
+
+        feedback.save((err) => {
+            if (err) {
+                const message = getErrorMessage(err);
+
+                req.flash('error', message);
+
+                return res.redirect('/feedback');
+            }
+        });
+    } else {
+        console.log("didn't create new feedback");
+        return res.redirect('/');
+    }
 };
 
 // Create a new controller method for signing out

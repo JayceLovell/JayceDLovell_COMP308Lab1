@@ -6,4 +6,6 @@ module.exports = function (app) {
         .get(feedback.render)
         .post('/Thankyou');
 
+    // Set up the 'signout' route
+    app.get('/signout', users.signout);
 };

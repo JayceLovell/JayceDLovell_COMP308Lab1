@@ -33,6 +33,7 @@ const getErrorMessage = function (err) {
 
 // Create a new controller method that renders the signin page
 exports.renderSignin = function (req, res, next) {
+    console.log("In users controller signin");
     // If user is not connected render the signin page, otherwise redirect the user back to the main application page
     if (!req.user) {
         // Use the 'response' object to render the signin page
