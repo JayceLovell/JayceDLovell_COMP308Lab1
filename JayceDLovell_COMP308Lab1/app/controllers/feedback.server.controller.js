@@ -1,25 +1,42 @@
-﻿exports.render = function (request, response) {
+﻿// Load the module dependencies
+const User = require('mongoose').model('User');
+const passport = require('passport');
+
+const getErrorMessage = function (err) {
+    // Define the error message variable
+    const message = '';
+
+    // If an internal MongoDB error occurs get the error message
+    if (err.code) {
+        switch (err.code) {
+            // If a unique index error occurs set the message error
+            case 11000:
+            case 11001:
+                message = 'Username already exists';
+                break;
+            // If a general error occurs set the message error
+            default:
+                message = 'Something went wrong';
+        }
+    } else {
+        // Grab the first error message from a list of possible errors
+        for (const errName in err.errors) {
+            if (err.errors[errName].message) message = err.errors[errName].message;
+        }
+    }
+
+    // Return the message error
+    return message;
+}
+
+exports.renderFeedback = function (request, response) {
     console.log("Made by Jayce Lovell 300833478");
-    //let email = request.body.email;
-    //let firstname = request.body.firstname;
-    //let lastname = request.body.lastname;
-    //let comments = request.body.comments;
-    //let numberOfLanguages = request.body.numberOfLanguages;
-    //console.log("email on feedback " + JSON.stringify(email));
-    //console.log("firstname on feedback " + JSON.stringify(firstname));
-    //Document.getElementById("email").innerText = JSON.stringify(email);
-    //request.body.email.innerHTML = JSON.stringify(email);
-    //if (firstname && lastname) {
-    //    //let email = request.body.email;
-    //    //let firstname = request.body.firstname;
-    //    //console.log("email on  leaving feedback " + JSON.stringify(email));
-    //    //console.log("firstname on leaving feedback " + JSON.stringify(firstname));
-    //    response.render('ThankYou');
-    //}
-    //else
-        response.render('feedback', { email: email});
-    //var email = request.body.email;
-    //if (email)
-        //response.redirect('/thankyou');
-    //else
+    if (!request.user) {
+        return response.redirect('/');
+    }
+    else {
+        response.render('feedback', {
+            title: 'Feedback'
+        });
+    }
 }
