@@ -84,9 +84,6 @@
     <Compile Include="public\js\bootstrap.js" />
     <Compile Include="public\js\bootstrap.min.js" />
     <Compile Include="server.js" />
-    <Content Include="app\.DS_Store">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="app\views\feedback.ejs">
       <SubType>Code</SubType>
     </Content>
@@ -117,9 +114,6 @@
     <Content Include="public\js\bootstrap.js.map" />
     <Content Include="public\js\bootstrap.min.js.map" />
     <Content Include="README.md" />
-    <Content Include="typings\globals\mongoose\typings.json">
-      <SubType>Code</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />

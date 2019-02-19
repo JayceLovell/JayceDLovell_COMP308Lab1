@@ -11,14 +11,14 @@
     <div class="container" align="center">
         <!-- Display flash messages  -->
         <% for(var i in messages) { %>
-        <div class="flash"><%= messages[i] %></div>
+        <div class="alert alert-danger"><%= messages[i] %></div>
         <% } %>
         <form action="/signup" method="post">
             <div class="row">
                 <div class="col-sm"></div>
                 <div class="col-sm form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                    <input type="text" class="form-control" name="firstName" placeholder="First Name">
                 </div>
                 <div class="col-sm"></div>
             </div>
@@ -26,7 +26,7 @@
                 <div class="col-sm"></div>
                 <div class="col-sm form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    <input type="text" class="form-control" name="lastName" placeholder="Last Name">
                 </div>
                 <div class="col-sm"></div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="col-sm"></div>
                 <div class="col-sm form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="example@example.com">
+                    <input type="email" class="form-control" name="email" placeholder="example@example.com">
                 </div>
                 <div class="col-sm"></div>
             </div>
@@ -42,7 +42,7 @@
                 <div class="col-sm"></div>
                 <div class="col-sm form-group">
                     <label for="username">User name</label>
-                    <input type="text" class="form-control" id="username" placeholder="Username">
+                    <input type="text" class="form-control" name="username" placeholder="Username">
                 </div>
                 <div class="col-sm"></div>
             </div>
@@ -50,7 +50,7 @@
                 <div class="col-sm"></div>
                 <div class="col-sm form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="*******">
+                    <input type="password" class="form-control" name="password" placeholder="*******">
                 </div>
                 <div class="col-sm"></div>
             </div>
