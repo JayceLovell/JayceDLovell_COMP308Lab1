@@ -49,6 +49,7 @@ exports.renderSignin = function (req, res, next) {
 
 // Create a new controller method that renders the signup page
 exports.renderSignup = function (req, res, next) {
+    console.log("in user controller signup");
     // If user is not connected render the signup page, otherwise redirect the user back to the main application page
     if (!req.user) {
         // Use the 'response' object to render the signup page
@@ -65,6 +66,7 @@ exports.renderSignup = function (req, res, next) {
 
 // Create a new controller method that creates new 'regular' users
 exports.signup = function (req, res, next) {
+    console.log("in user controll signup exports");
     // If user is not connected, create and login a new user, otherwise redirect the user back to the main application page
     if (!req.user) {
         // Create a new 'User' model instance
@@ -73,6 +75,8 @@ exports.signup = function (req, res, next) {
 
         // Set the user provider property
         user.provider = 'local';
+        //set user customer status
+        user.customer = true;
 
         // Try saving the new user document
         user.save((err) => {

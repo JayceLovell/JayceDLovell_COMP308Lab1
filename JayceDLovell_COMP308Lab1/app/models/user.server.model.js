@@ -30,6 +30,13 @@ const UserSchema = new Schema({
             'Password should be longer'
         ]
     },
+    numberoflanguages: {
+        type: Number,
+        minimum: 0,
+        maximum: 10
+    },
+    favoritesubject: String,
+    customer: Boolean,
     salt: {
         type: String
     },
@@ -68,6 +75,7 @@ UserSchema.pre('save', function (next) {
 
 // Create an instance method for hashing a password
 UserSchema.methods.hashPassword = function (password) {
+    console.log("in has password");
     return pbkd2f.pbkdf2Sync(password, this.salt, 10000, 64).toString('base64');
 };
 

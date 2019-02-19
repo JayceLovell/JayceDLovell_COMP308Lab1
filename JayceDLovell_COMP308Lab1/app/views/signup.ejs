@@ -56,12 +56,39 @@
             </div>
             <div class="row">
                 <div class="col-sm"></div>
+                <div class="col-sm form-group">
+                    <label for="numberOfLanguages" class="col-sim-2 control-label">Number of Languages Spoken</label>
+                    <select class="form-control" name="numberoflanguages">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="col-sm"></div>
             </div>
-            <div class="col-sm form-group">
-                <button type="submit" class="btn btn-success" value="Sign up">Signup</button>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm form-group">
+                    <label for="favoritesubject">Favorite Subject</label>
+                    <input type="text" class="form-control" name="favoritesubject">
+                </div>
+                <div class="col-sm"></div>
             </div>
-            <div class="col-sm"></div>
-        </form>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm form-group">
+                    <button type="submit" class="btn btn-success" value="Sign up">Signup</button>
+                </div>
+                <div class="col-sm"></div>
+            </div>
+</form>
         <!-- Render the OAuth authentication links  -->
         <a href="/oauth/facebook" class="btn btn-primary">Sign up with Facebook</a>
         <a href="/oauth/twitter" class="btn btn-info">Sign up with Twitter</a>

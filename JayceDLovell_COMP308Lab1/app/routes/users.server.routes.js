@@ -5,6 +5,7 @@ const passport = require('passport');
 
 // Define the routes module' method
 module.exports = function (app) {
+    console.log("in user routes");
     // Set up the 'signup' routes 
     app.route('/signup')
         .get(users.renderSignup)
@@ -14,7 +15,7 @@ module.exports = function (app) {
     app.route('/signin')
         .get(users.renderSignin)
         .post(passport.authenticate('local', {
-            successRedirect: feedback.renderFeedback,
+            successRedirect: '/feedback',
             failureRedirect: '/signin',
             failureFlash: true
         }));
