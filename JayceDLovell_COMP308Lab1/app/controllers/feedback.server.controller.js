@@ -45,8 +45,8 @@ exports.feedback = function (req, res, next) {
         const feedback = new Feedback(req.body);
         const message = null;
 
-        feedback.username = User.username;
-
+        feedback.username = req.user.username;
+        console.log("saving feedback");
         feedback.save((err) => {
             if (err) {
                 const message = getErrorMessage(err);
