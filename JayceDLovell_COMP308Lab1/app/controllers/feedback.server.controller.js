@@ -1,13 +1,14 @@
 ﻿// Load the module dependencies
 const Feedback = require('mongoose').model('Feedback');
-const passport = require('passport');
+const User = require('mongoose').model('User');
+//const passport = require('passport');
 
 const getErrorMessage = function (err) {
     // Define the error message variable
     const message = '';
 
     // If an internal MongoDB error occurs get the error message
-    if (err.code) {
+   if (err.code) {
         switch (err.code) {
             // If a unique index error occurs set the message error
             case 11000:
@@ -29,18 +30,14 @@ const getErrorMessage = function (err) {
     return message;
 }
 
-exports.renderFeedback = function (req, res) {
-    console.log("In feedback controller");
-    //if (!request.user) {
-    //    return response.redirect('/');
-    //}
-    //else {
+exports.renderFeedback = function (req, res, next) {
+    console.log("In renderfeedback controller");
     res.render('feedback', {
-        title: 'Feedback'
+        title: 'Jayce Lovell Lab02',
+        userFullName: req.user ? req.user.fullName : ''
     });
-    //}
 };
-// crete a new controller method that creats a new feedback
+// create a new controller method that creats a new feedback
 exports.feedback = function (req, res, next) {
     console.log("creating new feedback");
     if (!req.feedback) {
@@ -48,26 +45,19 @@ exports.feedback = function (req, res, next) {
         const feedback = new Feedback(req.body);
         const message = null;
 
+        feedback.username = User.username;
+
         feedback.save((err) => {
             if (err) {
                 const message = getErrorMessage(err);
 
                 req.flash('error', message);
 
-                return res.redirect('/feedback');
-            }
+               return res.redirect('/feedback');
+           }
         });
     } else {
         console.log("didn't create new feedback");
         return res.redirect('/');
     }
-};
-
-// Create a new controller method for signing out
-exports.signout = function (req, res) {
-        // Use the Passport 'logout' method to logout
-        req.logout();
-
-        // Redirect the user back to the main application page
-        res.redirect('/');
 };

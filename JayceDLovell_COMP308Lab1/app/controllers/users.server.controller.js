@@ -33,9 +33,9 @@ const getErrorMessage = function (err) {
 
 // Create a new controller method that renders the signin page
 exports.renderSignin = function (req, res, next) {
-    console.log("In users controller signin");
     // If user is not connected render the signin page, otherwise redirect the user back to the main application page
     if (!req.user) {
+        console.log("rendering Signin");
         // Use the 'response' object to render the signin page
         res.render('signin', {
             // Set the page title variable
@@ -44,16 +44,14 @@ exports.renderSignin = function (req, res, next) {
             messages: req.flash('error') || req.flash('info')
         });
     } else {
+        console.log("no !req.user so back to main page");
         return res.redirect('/');
     }
 };
-
 // Create a new controller method that renders the signup page
 exports.renderSignup = function (req, res, next) {
-    console.log("in user controller signup");
     // If user is not connected render the signup page, otherwise redirect the user back to the main application page
     if (!req.user) {
-        console.log("rendering signup cause signup failed");
         // Use the 'response' object to render the signup page
         res.render('signup', {
             // Set the page title variable
@@ -100,7 +98,7 @@ exports.signup = function (req, res, next) {
                 if (err) return next(err);
 
                 // Redirect the user back to the main application page
-                return res.redirect('/');
+                return res.redirect('/feedback');
             });
         });
     } else {

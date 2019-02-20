@@ -2,6 +2,7 @@
     // Load the 'users' controller
     //var users = require('../controllers/users.server.controller');
 module.exports = function (app) {
+    console.log("index routes");
     //handle a get request made to root path
     app.get('/', index.render); //go to http://localhost:1337/
     //handle a post request made to root path

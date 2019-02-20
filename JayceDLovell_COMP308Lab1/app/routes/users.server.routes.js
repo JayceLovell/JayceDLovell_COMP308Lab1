@@ -1,25 +1,21 @@
 ﻿// Load the module dependencies
 const users = require('../../app/controllers/users.server.controller');
-const feedback = require('../controllers/feedback.server.controller');
 const passport = require('passport');
 
 // Define the routes module' method
 module.exports = function (app) {
-    console.log("in user routes");
     // Set up the 'signup' routes 
     app.route('/signup')
         .get(users.renderSignup)
-        .post(console.log('signup post'));
-
+        .post(users.signup);
     // Set up the 'signin' routes 
     app.route('/signin')
         .get(users.renderSignin)
         .post(passport.authenticate('local', {
-            successRedirect: '/',
+            successRedirect: '/feedback',
             failureRedirect: '/signin',
             failureFlash: true
         }));
-
     // Set up the Facebook OAuth routes 
     app.get('/oauth/facebook', passport.authenticate('facebook', {
         failureRedirect: '/signin'
