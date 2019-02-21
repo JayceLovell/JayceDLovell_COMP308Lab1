@@ -8,26 +8,14 @@ module.exports = function (app) {
     app.route('/signup')
         .get(users.renderSignup)
         .post(users.signup);
-    if (users.adminCheck) {
-        // Set up the 'signin' routes 
-        app.route('/signin')
-            .get(users.renderSignin)
-            .post(passport.authenticate('local', {
-                successRedirect: '/viewcustomerfeedback',
-                failureRedirect: '/signin',
-                failureFlash: true
-            }));
-    }
-    else {
-        // Set up the 'signin' routes 
-        app.route('/signin')
-            .get(users.renderSignin)
-            .post(passport.authenticate('local', {
+    // Set up the 'signin' routes 
+    app.route('/signin')
+        .get(users.renderSignin)
+        .post(passport.authenticate('local', {
                 successRedirect: '/feedback',
                 failureRedirect: '/signin',
-                failureFlash: true
-            }));
-    }
+            failureFlash: true
+        }));
     // Set up the Facebook OAuth routes 
     app.get('/oauth/facebook', passport.authenticate('facebook', {
         failureRedirect: '/signin'

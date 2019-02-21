@@ -3,8 +3,6 @@ const Feedback = require('mongoose').model('Feedback');
 const User = require('mongoose').model('User')
 //const passport = require('passport');
 
-var userToFind = null;
-
 const getErrorMessage = function (err) {
     // Define the error message variable
     const message = '';
@@ -37,7 +35,7 @@ exports.renderFeedback = function (req, res, next) {
     if (req.user.customer) {
         console.log("rendering for customer");
         res.render('feedback', {
-            title: 'Jayce Lovell Lab02',
+            title: 'Jayce Lovell Lab02 Feedback',
             userFullName: req.user ? req.user.fullName : '',
             userFirstName: req.user.firstName,
             userLastName: req.user.lastName,
@@ -48,7 +46,7 @@ exports.renderFeedback = function (req, res, next) {
         console.log("rendering for admin");
         res.render('viewcustomerfeedback', {
             title: 'Jayce Lovell Lab 02 View Feedback',
-            findUser: userToFind
+            findUser: null
         });
     }
 };
@@ -77,4 +75,30 @@ exports.feedback = function (req, res, next) {
         console.log("didn't create new feedback");
         return res.redirect('/');
     }
+};
+exports.findCustomerFeedback = function (req, res, next) {
+    console.log("looking for customer feedback");
+    let userToFind = req.body.customerName;
+    console.log("looking: " + userToFind);
+    Feedback.find({ username: userToFind }, function (err, result) {
+        console.log("found customer");
+        if (err) {
+            console.log("failed to find user");
+            const message = getErrorMessage(err);
+
+            req.flash('error', message);
+            userToFind = null;
+            return res.redirect('viewcustomerfeedback')
+        } else {
+            console.log("found user");
+            console.log(result[0].comments);
+            console.log(result[0].username);
+            res.render('viewcustomerfeedback', {
+                title: 'Jayce Lovell Lab 02 View Feedback',
+                findUser: result[0].username,
+                userComments: result[0].comments
+            });
+        }
+        console.log("In findCustomerFeedback controller: " + result[0].comments);
+    });
 };

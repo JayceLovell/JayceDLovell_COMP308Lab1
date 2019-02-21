@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title><%= title %></title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="../../public/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -12,13 +13,11 @@
     <div class="container " align="center">
         <% if ( userFullName ) { %>
         <div class="row">
-            <div class="col-sm">
-            </div>
+            <div class="col-sm"></div>
             <div class="col-sm">
                 <h2>Hello <%=userFullName%> </h2>
             </div>
-            <div class="col-sm">
-            </div>
+            <div class="col-sm"></div>
         </div>
         <div class="row">
             <div class="col-sm"></div>
@@ -28,21 +27,24 @@
             <div class="col-sm"></div>
         </div>
         <% } else { %>
-        <div class="row">
-            <div class="col-sm"></div>
-            <div class="col-sm">
-                <a href="/signup" class="btn btn-primary">Sign up</a>
-            </div>
-            <div class="col-sm"></div>
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome</h1>
         </div>
-        <div class="row">
-            <div class="col-sm"></div>
-            <div class="col-sm">
-                <a href="/signin" class="btn btn-success">Sign in</a>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <a href="/signup" class="btn btn-primary">Sign up</a>
+                </div>
+                <div class="col-sm"></div>
             </div>
-            <div class="col-sm"></div>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <a href="/signin" class="btn btn-success">Sign in</a>
+                </div>
+                <div class="col-sm"></div>
+            </div>
+            <% } %>
         </div>
-        <% } %>
-    </div>
 </body>
 </html>

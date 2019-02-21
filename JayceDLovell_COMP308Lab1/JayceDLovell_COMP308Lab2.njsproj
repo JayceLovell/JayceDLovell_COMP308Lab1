@@ -45,9 +45,6 @@
     <Compile Include="app\controllers\users.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="app\controllers\viewcustomerfeedback.server.controller.js">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="app\models\feedback.server.model.js">
       <SubType>Code</SubType>
     </Compile>
@@ -64,9 +61,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\routes\users.server.routes.js">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="app\routes\viewcustomerfeedback.server.route.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="config\config.js">
