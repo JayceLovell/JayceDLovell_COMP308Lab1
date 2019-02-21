@@ -1,7 +1,9 @@
 ﻿// Load the module dependencies
 const Feedback = require('mongoose').model('Feedback');
-const User = require('mongoose').model('User');
+const User = require('mongoose').model('User')
 //const passport = require('passport');
+
+var userToFind = null;
 
 const getErrorMessage = function (err) {
     // Define the error message variable
@@ -32,10 +34,21 @@ const getErrorMessage = function (err) {
 
 exports.renderFeedback = function (req, res, next) {
     console.log("In renderfeedback controller");
-    res.render('feedback', {
-        title: 'Jayce Lovell Lab02',
-        userFullName: req.user ? req.user.fullName : ''
-    });
+    if (req.user.customer) {
+        res.render('feedback', {
+            title: 'Jayce Lovell Lab02',
+            userFullName: req.user ? req.user.fullName : '',
+            userFirstName: req.user.firstName,
+            userLastName: req.user.lastName,
+            userEmail: req.user.Email
+        });
+    }
+    else {
+        res.render('viewcustomerfeedback', {
+            title: 'Jayce Lovell Lab 02 View Feedback',
+            findUser: userToFind
+        });
+    }
 };
 // create a new controller method that creats a new feedback
 exports.feedback = function (req, res, next) {

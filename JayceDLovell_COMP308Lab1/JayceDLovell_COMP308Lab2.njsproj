@@ -108,9 +108,11 @@
     <Content Include="app\views\ThankYou.ejs">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="app\views\viewfeedback.ejs">
+    <Content Include="app\views\viewcustomerfeedback.ejs">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="COMP308W18 Lab Assignment 2.pdf" />
+    <Content Include="COMP308W19 Assignment1.pdf" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="public\css\bootstrap-theme.css" />

@@ -4,4 +4,7 @@ module.exports = function (app) {
     app.route('/feedback')
         .get(feedback.renderFeedback)
         .post(feedback.feedback);
+    app.route('/viewcustomerfeedback')
+        .get(feedback.renderFeedback)
+        .post();
 };
