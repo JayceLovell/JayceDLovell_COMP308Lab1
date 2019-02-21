@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title><%= title %></title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     <script src="../../public/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -15,14 +15,14 @@
         <div class="row">
             <div class="col-sm"></div>
             <div class="col-sm">
-                <h2>Hello <%=userFullName%> </h2>
+                <h2>Hello <span class="fas fa-user-alt"></span> <%=userFullName%> </h2>
             </div>
             <div class="col-sm"></div>
         </div>
         <div class="row">
             <div class="col-sm"></div>
             <div class="col-sm">
-                <a href="/signout">Sign out</a>
+                <a href="/signout" class="btn btn-dark"> <span class="fas fa-key"></span> Sign out</a>
             </div>
             <div class="col-sm"></div>
         </div>

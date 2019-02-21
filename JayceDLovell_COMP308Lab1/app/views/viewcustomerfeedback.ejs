@@ -11,17 +11,17 @@
 <body>
     <div class="container " align="center">
         <% if ( findUser != null ) { %>
-            <div class="jumbotron">
-                <h1 class="display-4">User: <%=findUser%></h1>
-                <p class="lead"><%=userComments%></p>
-                <hr class="my-4">
-                <a class="btn btn-primary btn-lg" href="/viewcustomerfeedback">View another feedback</a>
-            </div>
+        <div class="jumbotron">
+            <h1 class="display-4">User: <%=findUser%></h1>
+            <p class="lead"><%=userComments%></p>
+            <hr class="my-4">
+            <a class="btn btn-primary btn-lg" href="/viewcustomerfeedback">View another feedback</a>
+        </div>
         <% } else { %>
         <form class="form-horizontal" method="post" action="/viewcustomerfeedback">
             <div class="form-group">
                 <label class="control-label col-sm-4" for="customerName">Please insert Customer name: </label>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <input typeof="text" class="form-control" name="customerName" placeholder="Customer">
                 </div>
             </div>
@@ -30,6 +30,14 @@
                     <button type="submit" class="btn btn-secondary">Submit</button>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <a href="/signout" class="btn btn-dark">Sign out</a>
+                </div>
+                <div class="col-sm"></div>
+            </div>
         </form>
-        <% } %>
+    </div>
+    <% } %>
 </body>

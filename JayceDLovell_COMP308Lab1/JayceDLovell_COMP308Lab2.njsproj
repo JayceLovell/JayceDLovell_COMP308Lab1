@@ -123,6 +123,8 @@
     <Content Include="public\css\bootstrap.css.map" />
     <Content Include="public\css\bootstrap.min.css" />
     <Content Include="public\css\bootstrap.min.css.map" />
+    <Content Include="public\css\fontawesome.css" />
+    <Content Include="public\css\fontawesome.min.css" />
     <Content Include="public\js\bootstrap.bundle.js.map" />
     <Content Include="public\js\bootstrap.bundle.min.js.map" />
     <Content Include="public\js\bootstrap.js.map" />
