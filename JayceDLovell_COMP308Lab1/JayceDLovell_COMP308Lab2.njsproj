@@ -57,6 +57,9 @@
     <Compile Include="app\routes\index.server.routes.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\routes\thankyou.server.route.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\routes\users.server.routes.js">
       <SubType>Code</SubType>
     </Compile>

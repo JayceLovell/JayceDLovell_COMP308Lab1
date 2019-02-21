@@ -49,6 +49,7 @@ exports.feedback = function (req, res, next) {
         console.log("saving feedback");
         feedback.save((err) => {
             if (err) {
+                console.log("failed to save feedback");
                 const message = getErrorMessage(err);
 
                 req.flash('error', message);
@@ -56,6 +57,7 @@ exports.feedback = function (req, res, next) {
                return res.redirect('/feedback');
            }
         });
+        return res.redirect('/thankyou');
     } else {
         console.log("didn't create new feedback");
         return res.redirect('/');

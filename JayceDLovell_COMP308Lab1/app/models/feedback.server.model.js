@@ -7,7 +7,13 @@ const Schema = mongoose.Schema;
 // Define a new 'FeedbackSchema
 const FeedbackSchema = new Schema({
     username: {
-        type: Schema.Types.ObjectId, ref: 'User'
+        type: String,
+        // Set a unique 'username' index
+        unique: true,
+        // Validate 'username' value existance
+        required: 'Username is required',
+        // Trim the 'username' field
+        trim: true
     },
     comments: String,
     created: {

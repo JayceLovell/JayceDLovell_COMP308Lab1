@@ -11,21 +11,23 @@
 <body>
     <form action="/feedback" method="post" class="form-horizontal">
         <div class="row" align="center">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-7">
                 <h1> We are glad to have your feedback <%=userFullName%> </h1>
                 <div class="form-group">
-                    <label for="comments" class="col-sim-2 control-label">Your comments:</label>
-                    <textarea rows="6" cols="50" name="comments"></textarea>
+                    <label for="comments" class="col-sim-2 control-label">Your Feedback:</label>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-success">Submit</button>
+                    <textarea rows="6" cols="50" name="comments"></textarea>
+                </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
                     </div>
                 </div>
+                <div class="col-sm-2"></div>
             </div>
-            <div class="col-sm-3"></div>
-        </div>
     </form>
 </body>
 </html>
