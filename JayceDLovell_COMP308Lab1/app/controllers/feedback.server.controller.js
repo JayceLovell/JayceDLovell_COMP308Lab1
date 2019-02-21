@@ -35,6 +35,7 @@ const getErrorMessage = function (err) {
 exports.renderFeedback = function (req, res, next) {
     console.log("In renderfeedback controller");
     if (req.user.customer) {
+        console.log("rendering for customer");
         res.render('feedback', {
             title: 'Jayce Lovell Lab02',
             userFullName: req.user ? req.user.fullName : '',
@@ -44,6 +45,7 @@ exports.renderFeedback = function (req, res, next) {
         });
     }
     else {
+        console.log("rendering for admin");
         res.render('viewcustomerfeedback', {
             title: 'Jayce Lovell Lab 02 View Feedback',
             findUser: userToFind

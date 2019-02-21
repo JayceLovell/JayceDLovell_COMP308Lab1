@@ -75,8 +75,14 @@ exports.signup = function (req, res, next) {
 
         // Set the user provider property
         user.provider = 'local';
-        //set user customer status
-        user.customer = true;
+        if (user.username == "Jayce") {
+            console.log("making admin")
+            user.customer = false;
+        }
+        else {
+            //set user customer status
+            user.customer = true;
+        }
 
         // Try saving the new user document
         user.save((err) => {
@@ -151,4 +157,21 @@ exports.signout = function (req, res) {
 
     // Redirect the user back to the main application page
     res.redirect('/');
+};
+
+//check if user is admin
+exports.adminCheck = function (req, res) {
+    let query = { username: req.body.username };
+    User.find(query), (err, result) => {
+        if (err) {
+            console.log("failed to find user");
+            const message = getErrorMessage(err);
+
+            req.flash('error', message);
+        } else {
+            console.log("User is customer: " + result.customer);
+            return true;
+        }
+        console.log(result);
+    };
 };
